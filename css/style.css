@@ -23,5 +23,29 @@
   height: : 25px;
   width:  25px;
   border : 1px solid black;
-
+}
+.palette{
+  display: flex;
+}
+.listOfColors{
+  list-style: none;
+  display: flex;
+}
+.colorItem{
+  content: none;
+  height: : 25px;
+  width:  25px;
+  border : 1px solid black;
+  margin: 2px;
+}
+.listOfColors :nth-child(1){
+  background-color:  red;
+}
+.listOfColors :nth-child(2){
+  background-color:  blue;
+}
+.colorExample{
+  padding-top: 16px;
+  text-align: center;
+  margin: 2px;
 }
