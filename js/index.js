@@ -1,10 +1,10 @@
 // заполненин холста
 let container = document.getElementById('container');
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 40; i++) {
   let row = document.createElement('div');
     row.classList+='row';
     container.appendChild(row);
-  for (let j = 0; j < 30; j++) {
+  for (let j = 0; j < 60; j++) {
     let column = document.createElement('div');
       column.classList+='column';
       row.appendChild(column);
@@ -27,10 +27,19 @@ let allCell = document.getElementsByClassName('column');
 let cell = Array.prototype.filter.call(allCell, function(allCelll){
   return allCelll.nodeName === 'DIV';
 });
+
+
+
 // цвет образца
 let color='red';
 let expColor = document.getElementById('colorExample');
 expColor.style.backgroundColor= color;
+// выбор инпутом
+let inputColor = document.getElementById('inputColor');
+inputColor.addEventListener('change', function (event) {
+color=event.currentTarget.value;
+expColor.style.backgroundColor= color;
+});
 
 //выборцвета
 let chColor = document.getElementById('colors');
