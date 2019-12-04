@@ -28,12 +28,11 @@ let cell = Array.prototype.filter.call(allCell, function(allCelll){
   return allCelll.nodeName === 'DIV';
 });
 
-
-
 // цвет образца
 let color='red';
 let expColor = document.getElementById('colorExample');
 expColor.style.backgroundColor= color;
+
 // выбор инпутом
 let inputColor = document.getElementById('inputColor');
 inputColor.addEventListener('change', function (event) {
@@ -47,15 +46,14 @@ chColor.addEventListener("click", function(event) {
   color=window.getComputedStyle(event.target).backgroundColor;
   expColor.style.backgroundColor= color;
 })
+
 // обработчик событий для холста
-for (var i = 0; i < cell.length; i++) {
-  cell[i].addEventListener("click", function(event){
-     event.currentTarget.style.backgroundColor= color;
+container.addEventListener("click", function(event){
+     if (event.target.classList.contains("column"))
+     event.target.style.backgroundColor= color;
    });
-}
-for (var i = 0; i < cell.length; i++) {
-  cell[i].addEventListener("mousemove", function(event){
-    if(event.buttons==1)
-     event.currentTarget.style.backgroundColor= color;
+container.addEventListener("mousemove", function(event){
+     if (event.target.classList.contains("column"))
+     if(event.buttons==1)
+     event.target.style.backgroundColor= color;
    });
-}
